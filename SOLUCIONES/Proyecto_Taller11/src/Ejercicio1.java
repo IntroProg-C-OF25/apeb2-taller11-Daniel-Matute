@@ -65,3 +65,18 @@ public class Ejercicio1 {
         System.out.println("Promedio de la Matriz: "+ promMatriz);
     }
 }
+/*
+run-single:
+Dame el limte de las filas y las columnas: 2 3
+Matriz Generada: 
+6 6 6 
+8 1 1 
+Elementos Pares
+6 6 6 
+8 
+Elementos Impares
+
+11
+Promedio de la Matriz: 4
+BUILD SUCCESSFUL (total time: 5 seconds)
+*/

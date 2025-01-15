@@ -18,8 +18,8 @@ public class Ejercicio2 {
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
         int opcion ;
-        double lado,base, altura;
-        System.out.println("Elige el procedimiento que quieres usar 1.Area Cuadrado ");
+        double lado,base, altura, area=0;
+        System.out.println("Elige el procedimiento que quieres usar:    1.Area Cuadrado ");
         System.out.println("2. AreaTriangulo");
         System.out.println("3. Area Rectangulo");
         opcion= tcl.nextInt();
@@ -27,38 +27,46 @@ public class Ejercicio2 {
             case 1:
                 System.out.print("Dame el valor del lado del cuadrado: ");
                 lado=tcl.nextDouble();
-                System.out.println("El area del Cuadrado es:");
-                areaCuadrado(lado);
+                System.out.println("El area del Cuadrado es:"+ areaCuadrado(lado , area ));
                 break;
                 
             case 2:
                 System.out.print("Dame el valor de la base y altura: ");
                 base=tcl.nextDouble();
                 altura=tcl.nextDouble();
-                System.out.println("El area del Triangulo es:");
-                areaTriangulo(base, altura);
+                System.out.println("El area del Triangulo es:" + areaTriangulo(base, altura, area));
                 break;
             case 3:
                 System.out.print("Dame el valor de la base y altura: ");
                 base=tcl.nextDouble();
                 altura=tcl.nextDouble();
-                System.out.println("El area del rectangulo ");
-                areaRectangulo(base, altura);
+                System.out.println("El area del rectangulo "+areaRectangulo(base, altura,area));
                 break;   
             default:
                 System.out.println("Opcion Incorrecta");;
         }
     }
-    public static double areaCuadrado(double lado){
-        double areaCuadrado;
-        return areaCuadrado= Math.pow(lado, 4);
+    public static double areaCuadrado(double lado, double area){
+        area= Math.pow(lado, 4);
+        return area;
     }
-    public static double areaTriangulo(double base , double altura){
-        double areaTriangulo;
-        return areaTriangulo= (base * altura)/2;
+    public static double areaTriangulo(double base , double altura,double area){
+         area= (base * altura)/2;
+        return area;
     }
-    public static double areaRectangulo(double base , double altura){
-        double areaRectangulo;
-         return areaRectangulo= base*altura;
+    public static double areaRectangulo(double base , double altura, double area){
+        area= base*altura;
+         return area;
     }
 }
+/*
+run-single:
+Elige el procedimiento que quieres usar:   1.Area Cuadrado 
+2. AreaTriangulo
+3. Area Rectangulo
+
+2
+Dame el valor de la base y altura: 5 6
+El area del Triangulo es:15.0
+BUILD SUCCESSFUL (total time: 19 seconds)
+*/
